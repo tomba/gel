@@ -1,0 +1,18 @@
+
+File f = new File("stream.bs");
+
+
+// stream-source<T> : delegate(T value)
+
+f:{ char c, c != 0 | Console.WriteLine(c); };
+f:Console.WriteLine;
+
+f.Lines : { Console.WriteLine(value); }
+
+f : { c | if(c != 0) return c; } : { c | write(c); };
+
+
+f:{ char c | return c; };
+
+del = delegate(char c) { return c; }
+f:del;

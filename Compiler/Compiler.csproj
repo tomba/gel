@@ -1,0 +1,174 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A22E4EC4-5186-407A-B0C3-AD0C5CDBEF9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gel.Compiler</RootNamespace>
+    <AssemblyName>Gel.Compiler</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Ast\AstNode.cs" />
+    <Compile Include="Ast\LocalConst.cs" />
+    <Compile Include="Ast\Expressions\PostfixExpression.cs" />
+    <Compile Include="Ast\Expressions\MappingCreationExpression.cs" />
+    <Compile Include="Ast\Expressions\ListCreationExpression.cs" />
+    <Compile Include="Ast\Expressions\TypeConversionExpression.cs" />
+    <Compile Include="Ast\Expressions\FloatLiteralExpression.cs" />
+    <Compile Include="Ast\Expressions\DynamicMethodCall.cs" />
+    <Compile Include="Ast\Expressions\DynamicMemberAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\InternalFieldAccessExpression.cs" />
+    <Compile Include="Ast\MemberDeclaration.cs" />
+    <Compile Include="Ast\FieldDeclaration.cs" />
+    <Compile Include="Ast\EmitContext.cs" />
+    <Compile Include="Ast\Expressions\ArithmeticExpression.cs" />
+    <Compile Include="Ast\Expressions\AssignmentExpression.cs" />
+    <Compile Include="Ast\Expressions\BaseExpression.cs" />
+    <Compile Include="Ast\Expressions\BinaryExpression.cs" />
+    <Compile Include="Ast\Expressions\BooleanLiteralExpression.cs" />
+    <Compile Include="Ast\Expressions\BoxExpression.cs" />
+    <Compile Include="Ast\Expressions\CharacterLiteralExpression.cs" />
+    <Compile Include="Ast\Expressions\ComparisonExpression.cs" />
+    <Compile Include="Ast\Expressions\ConditionalExpression.cs" />
+    <Compile Include="Ast\Expressions\TypeOfExpression.cs" />
+    <Compile Include="Ast\Expressions\ElementAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\DynamicName.cs" />
+    <Compile Include="Ast\Expressions\Expression.cs" />
+    <Compile Include="Ast\Expressions\IntegerLiteralExpression.cs" />
+    <Compile Include="Ast\Expressions\InvocationExpression.cs" />
+    <Compile Include="Ast\Expressions\LocalAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\LogicalExpression.cs" />
+    <Compile Include="Ast\Expressions\MemberAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\MethodCall.cs" />
+    <Compile Include="Ast\Expressions\NamespaceAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\NewExpression.cs" />
+    <Compile Include="Ast\Expressions\NullLiteralExpression.cs" />
+    <Compile Include="Ast\Expressions\PropertyAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\RealLiteralExpression.cs" />
+    <Compile Include="Ast\Expressions\SimpleName.cs" />
+    <Compile Include="Ast\Expressions\StringLiteralExpression.cs" />
+    <Compile Include="Ast\Expressions\ThisExpression.cs" />
+    <Compile Include="Ast\Expressions\TypeAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\TypeCastExpression.cs" />
+    <Compile Include="Ast\Expressions\TypeComparisonExpression.cs" />
+    <Compile Include="Ast\Expressions\UnaryExpression.cs" />
+    <Compile Include="Ast\Expressions\UnboxExpression.cs" />
+    <Compile Include="Ast\IAssignable.cs" />
+    <Compile Include="Ast\LocalVariable.cs" />
+    <Compile Include="Ast\Location.cs" />
+    <Compile Include="Ast\MethodDeclaration.cs" />
+    <Compile Include="Ast\ResolveContext.cs" />
+    <Compile Include="Ast\Statements\Block.cs" />
+    <Compile Include="Ast\Statements\NopStatement.cs" />
+    <Compile Include="Ast\Statements\ExpressionStatement.cs" />
+    <Compile Include="Ast\Statements\ForStatement.cs" />
+    <Compile Include="Ast\Statements\IfStatement.cs" />
+    <Compile Include="Ast\Statements\ReturnStatement.cs" />
+    <Compile Include="Ast\Statements\Statement.cs" />
+    <Compile Include="Ast\Statements\StatementList.cs" />
+    <Compile Include="Ast\Statements\WhileStatement.cs" />
+    <Compile Include="CompileException.cs" />
+    <Compile Include="GelCompiler.cs" />
+    <Compile Include="CompilerResults.cs" />
+    <Compile Include="Debug.cs" />
+    <Compile Include="Graph\ControlFlowGraph.cs" />
+    <Compile Include="Graph\Graph.cs" />
+    <Compile Include="Graph\Visitor\ControlFlowCreateVisitor.cs" />
+    <Compile Include="Graph\Visitor\IAstVisitor.cs" />
+    <Compile Include="NullType.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ast\Expressions\ArrayCreationExpression.cs" />
+    <Compile Include="Ast\Expressions\InternalMethodCall.cs" />
+    <Compile Include="Ast\Expressions\InternalMethodGroup.cs" />
+    <Compile Include="Ast\Program.cs" />
+    <Compile Include="Runtime.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=0.3.0.21984, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>antlr-3.0b5\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{B0A13DAF-362C-4930-B7DD-88D8E5E32679}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Antlr3 Include="Parser\Gel.g;Parser\GelGen.g">
+      <InputFiles>Parser\Gel.g Parser\GelGen.g</InputFiles>
+      <OutputFiles>Parser\GelLexer.cs;Parser\GelParser.cs;Parser\Gel.tokens;Parser\Gel__.g;Parser\GelGenTreeParser.cs;Parser\GelGen.tokens</OutputFiles>
+    </Antlr3>
+    <Compile Include="Ast\Expressions\ApplyExpression.cs" />
+    <Compile Include="Ast\Expressions\ClosureExpression.cs" />
+    <Compile Include="Ast\Expressions\FieldAccessExpression.cs" />
+    <Compile Include="Ast\Expressions\MethodGroupExpression.cs" />
+    <Compile Include="Ast\GelLabel.cs" />
+    <Compile Include="Ast\Statements\LocalDeclaration.cs" />
+    <Compile Include="Parser\GelLexer.cs;Parser\GelParser.cs">
+      <DependentUpon>Gel.g</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <None Include="Parser\Gel.tokens;Parser\Gel__.g">
+      <DependentUpon>Gel.g</DependentUpon>
+    </None>
+    <Compile Include="Parser\GelGenTreeParser.cs">
+      <DependentUpon>GelGen.g</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <None Include="Parser\GelGen.tokens">
+      <DependentUpon>GelGen.g</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Target Name="AntlrBuild" Inputs="@(Antlr3)" Outputs="%(Antlr3.OutputFiles)">
+    <Delete Files="%(Antlr3.OutputFiles)" />
+    <Exec Command="antlr-3.0b5\antlr.bat -message-format vstudio -lib Parser %(Antlr3.InputFiles)" Outputs="%(Antlr3.OutputFiles)" />
+  </Target>
+  <Target Name="AntlrClean">
+    <Delete Files="%(Antlr3.OutputFiles)" />
+  </Target>
+  <Target Name="BeforeBuild" DependsOnTargets="AntlrBuild">
+  </Target>
+  <Target Name="BeforeClean" DependsOnTargets="AntlrClean">
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

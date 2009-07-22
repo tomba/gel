@@ -1,0 +1,40 @@
+int[] array = { 6, 8, 4, 2, 6, 7 };
+
+System.Console.WriteLine("Original array:");
+PrintArray(array);
+
+array = sort(array);
+
+System.Console.WriteLine("Sorted array:");
+PrintArray(array);
+
+
+
+int[] sort(int[] nlist)
+{
+       int i, j, temp;
+        for(i = nlist.Length-1; i>=0; i--)
+        {
+            for (j = 1; j <= i; j++)
+            {
+                if (nlist[j-1] > nlist[j])
+                {
+                    temp = nlist[j-1];
+                    nlist[j-1] = nlist[j];
+                    nlist[j] = temp;
+                }
+            }
+        }
+        
+        return nlist;
+}
+
+void PrintArray(int[] array)
+{
+	for(int i = 0; i < array.Length; i++)
+	{
+		System.Console.Write(array[i]);
+		System.Console.Write(", ");
+	}
+	System.Console.WriteLine();
+}
